@@ -19,7 +19,7 @@ class LinkedList:
         self.head = None
 
     def is_empty(self):
-        return self.head == None
+        return self.head is None
 
     def size(self):
         """
@@ -114,6 +114,19 @@ class LinkedList:
 
         return current
 
+    def node_at_index(self, index):
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            pos = 0
+
+            while (pos < index):
+                current = current.next
+                pos += 1
+
+        return current
+
     def __repr__(self):
         """
         Return a string representation of the linked list
@@ -137,12 +150,12 @@ class LinkedList:
 
 # Without `__repr__`, when printing a Node object,
 # it would show the memory address instead of the data.
-l = LinkedList()
-N1 = Node(10)
-l.head = N1
-print(l.size())
-l.add(20)
-print(l.size())
-l.add(30)
-print(l)
-print(l.search(20))
+# l = LinkedList()
+# N1 = Node(10)
+# l.head = N1
+# print(l.size())
+# l.add(20)
+# print(l.size())
+# l.add(30)
+# print(l)
+# print(l.search(20))
